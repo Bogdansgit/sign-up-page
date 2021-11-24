@@ -1,0 +1,25 @@
+@import '../utils/mixins';
+
+h1,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: left;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

@@ -1,0 +1,149 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__content-box {
+    gap: 16px;
+
+    @include mobile {
+      gap: 19px;
+    }
+  }
+
+  & > h4 {
+    margin-bottom: 12px;
+
+    @include mobile {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    border: 1px solid $ligh-grey;
+    border-radius: 16px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  input:checked +label {
+    border: 1px solid $green;
+    fill: $green;
+    color: $green;
+  }
+
+  &__buttons-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button-radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    min-width: 156px;
+    min-height: 100px;
+
+    @include mobile {
+      min-width: 90px;
+      min-height: 80px;
+    }
+  }
+
+  &__input-email {
+    width: 100%;
+    height: 70px;
+    padding: 0 25px 0;
+
+    @include mobile {
+      height: 50px;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $green;
+    }
+  }
+
+  &__pass {
+    position: relative;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #3C9C41;
+    transition: .2s;
+
+    &:hover {
+      background-color:#4db252;
+    }
+
+    &:active {
+      background-color:#318636;
+    }
+  }
+
+  &__visible-eye {
+    position: absolute;
+    top: 20%;
+    right: 25px;
+    max-width: 40px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    fill: #C1C1C1;
+
+    @include mobile {
+      top: 10px;
+      right: 16px;
+    }
+  }
+
+  &__checked-eye {
+    fill: $grey;
+  }
+
+  &__log {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    & > h4 {
+      font-weight: 400;
+    }
+
+    & > a {
+      color: #3C9C41;
+    }
+  }
+
+  &__log-in {
+    margin-bottom: 20px;
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__error {
+    border: 1px solid $error-red;
+  }
+
+  &__error-message {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    color: $error-red;
+  }
+};

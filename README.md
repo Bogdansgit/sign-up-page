@@ -2,7 +2,7 @@
 
 ---
 
-Landing Page S3 Innovate implemented on **React** using **SCSS**. Made adaptive for mobile,fullscreen. 
+Sign Up Page implemented on **React** using **SCSS**. Made adaptive for mobile,fullscreen. 
 
 - Stack: React, SASS.<br>
 

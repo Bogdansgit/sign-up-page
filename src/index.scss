@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/typography.scss';
+
+body {
+  margin: 0;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: $grey;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

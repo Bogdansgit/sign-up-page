@@ -1,0 +1,34 @@
+@import './utils/mixins';
+
+.App {
+  padding: 29px 0 35px;
+
+  @include mobile {
+    padding: 25px 0 35px;
+  }
+}
+
+.App-logo {
+  max-width: 80px;
+  max-height: 82px;
+  margin: 0 auto 24px;
+
+  @include mobile {
+    margin: 0 auto 21px;
+
+    svg {
+      width: 55px;
+      height: 56px;
+    }
+  }
+}
+
+.App-header {
+  & > h1 {
+    margin-bottom: 35px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+}
