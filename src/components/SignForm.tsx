@@ -19,36 +19,18 @@ export const SignForm: React.FC = () => {
   const checkEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
   const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsEmailValid(true);
     setEmailValue(event.target.value);
-
-    if (!emailValue.match(checkEmail)) {
-      setIsEmailValid(false);
-      return;
-    } else {
-      setIsEmailValid(true);
-    }
   }
 
   const passHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsPassValid(true);
     setPassValue(event.target.value);
-
-    if (passValue.length < 5) {
-      setIsPassValid(false);
-      return;
-    } else {
-      setIsPassValid(true);
-    }
   }
 
   const confirmPassHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsPassSame(true);
     setCheckPassValue(event.target.value);
-
-    if (event.target.value !== passValue) {
-      setIsPassSame(false);
-      return;
-    } else {
-      setIsPassSame(true);
-    }
   }
 
   const showHide = (event: any) => {
@@ -91,6 +73,8 @@ export const SignForm: React.FC = () => {
     setEmailValue('');
     setPassValue('');
     setCheckPassValue('');
+    setIsEyePassChecked(false);
+    setIsEyeCheckPassChecked(false);
   };
 
   return (
@@ -179,17 +163,19 @@ export const SignForm: React.FC = () => {
             onChange={emailHandler}
             className={
               isEmailValid
-                ? 'form__input form__input-email'
-                : "form__input form__input-email form__error form__error-message--visible"
+                ? 'form__input form__input-email form__error-message-box'
+                : "form__input form__input-email form__error"
               }
             placeholder="example@mail.com"
             required
           />
           {
-            isEmailValid
-            || <span className="form__error-message">
+            isEmailValid ||
+            <div className="form__error-message-box">
+              <span className="form__error-message">
                 please enter valid email
               </span>
+            </div>
           }
         </div>
 
@@ -204,15 +190,18 @@ export const SignForm: React.FC = () => {
             value={passValue}
             className={
               isPassValid
-                ? 'form__input form__input-email'
+                ? 'form__input form__input-email form__error-message-box'
                 : "form__input form__input-email form__error"
               }
           />
           {
             isPassValid
-            || <span className="form__error-message">
+            ||
+            <div className="form__error-message-box">
+              <span className="form__error-message">
                 please enter valid password (min 6 signs)
               </span>
+            </div>
           }
 
           <button
@@ -244,15 +233,18 @@ export const SignForm: React.FC = () => {
             value={checkPassValue}
             className={
               isPassSame
-                ? 'form__input form__input-email'
+                ? 'form__input form__input-email form__error-message-box'
                 : "form__input form__input-email form__error"
               }
           />
           {
             isPassSame
-            || <span className="form__error-message">
+            ||
+            <div className="form__error-message-box">
+              <span className="form__error-message">
                 your password isn't same
               </span>
+            </div>
           }
 
           <button

@@ -22,12 +22,12 @@
   }
 
   &__input {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     border: 1px solid $ligh-grey;
     border-radius: 16px;
 
     @include mobile {
-      margin-bottom: 20px;
+      margin-bottom: 2px;
     }
   }
 
@@ -40,6 +40,7 @@
   &__buttons-box {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 18px;
   }
 
   &__button-radio {
@@ -140,10 +141,12 @@
     border: 1px solid $error-red;
   }
 
+  &__error-message-box {
+    margin-bottom: 30px;
+  }
+
   &__error-message {
-    position: absolute;
-    top: 70px;
-    left: 0;
+    margin-bottom: 30px;
     color: $error-red;
   }
 };
